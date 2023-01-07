@@ -1,0 +1,8 @@
+<!--_post.html.erb-->
+<%= turbo_frame_tag dom_id(post) do %>
+  <div class="post">
+    <h3><%= link_to post.title, post_path(post), data: { turbo_frame: "_top" } %><br><br></h3>
+    <%= link_to "Edit", edit_post_path(post) %>
+    <%= link_to "Delete", post_path(post), data: { "turbo-method": :delete } %>
+  </div>
+<% end %>

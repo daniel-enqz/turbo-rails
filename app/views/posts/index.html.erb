@@ -1,0 +1,9 @@
+<!--index.html.erb-->
+<h1>Posts Index</h1>
+<%= link_to "New Post", new_post_path, data: { turbo_frame: dom_id(Post.new) } %><br><br>
+<div class="flex-container">
+  <%= turbo_frame_tag Post.new %>
+  <%= turbo_frame_tag "posts" do %>
+    <%= render @posts %>
+  <% end %>
+</div>

@@ -1,0 +1,7 @@
+<!--new.html.erb-->
+<h1>New Post</h1>
+<%= link_to "Back to posts", posts_path %>
+
+<%= turbo_frame_tag @post do %>
+  <%= render "form", post: @post %>
+<% end %>
